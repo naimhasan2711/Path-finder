@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/first_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/search_text"
+            android:layout_width="300dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:ems="10"
+            android:hint="Enter Location..."
+            android:inputType="textPersonName"
+            android:textColor="@android:color/black" />
+
+        <Button
+            android:id="@+id/search_button"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_weight="1"
+            android:background="#0D47A1"
+            android:fontFamily="serif-monospace"
+            android:onClick="onClick"
+            android:text="Search"
+            android:textAllCaps="false"
+            android:textColor="@android:color/background_light"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/second_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/first_layout"
+        android:gravity="fill_horizontal">
+
+        <Button
+            android:id="@+id/hospital_button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:background="@android:color/holo_red_dark"
+            android:fontFamily="serif-monospace"
+            android:onClick="onClick"
+            android:text="Hospital"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@android:color/background_light"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/restaurant_button"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_toEndOf="@+id/hospital_button"
+            android:background="?android:attr/colorActivatedHighlight"
+            android:fontFamily="serif-monospace"
+            android:onClick="onClick"
+            android:text="Restaurant"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@android:color/background_light"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/school_button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignTop="@+id/restaurant_button"
+            android:layout_toEndOf="@+id/restaurant_button"
+            android:background="#6A1B9A"
+            android:fontFamily="serif-monospace"
+            android:onClick="onClick"
+            android:text="School"
+            android:textAllCaps="false"
+            android:textColor="@android:color/background_light"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/go_button"
+            android:layout_width="86dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="23dp"
+            android:background="#f50057"
+            android:fontFamily="serif-monospace"
+            android:onClick="onClick"
+            android:text="Distance"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@android:color/background_light"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/third_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/second_layout"
+        android:gravity="left"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+
+        <Button
+            android:id="@+id/duration_button"
+            android:layout_width="250dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#1A237E"
+            android:fontFamily="serif-monospace"
+            android:onClick="onClick"
+            android:text="Duration"
+            android:textColor="@android:color/background_light"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="454dp"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/third_layout"
+        android:layout_weight="1"
+        tools:context=".MapsActivity" />
+
+</RelativeLayout>
